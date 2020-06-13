@@ -60,8 +60,21 @@ static const char unknown_str[] = "n/a";
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
+
+  
+  
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	/* function           format           argument */
+        { run_command,        "  %s  ",       "amixer get Master | awk -F'[][]' 'END{ print $2 }'"},
+        /*{ ram_used,           " %s/",           NULL},
+        { ram_total,          "%s  ",          NULL},
+        { disk_free,          " %s ",          "/"},
+        { disk_free,          " %s  ",        "/home"},*/
+        { wifi_essid,         " %s ",          "wlo1"},
+        { wifi_perc,          "%s%%  ",        "wlo1"},
+        { temp,               "%sºC  ",        "/sys/class/thermal/thermal_zone0/temp" },
+        { battery_state,      "%s",             "BAT1" },
+        { battery_perc,       "%s%%  ",        "BAT1" },
+	{ datetime,           "%s ",            "%d-%m-%y %H:%M:%S" },
 };
