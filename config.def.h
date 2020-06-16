@@ -67,14 +67,14 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function           format           argument */
         { run_command,        "  %s  ",       "amixer get Master | awk -F'[][]' 'END{ print $2 }'"},
-        /*{ ram_used,           " %s/",           NULL},
+        /*{ ram_used,         " %s/",           NULL},
         { ram_total,          "%s  ",          NULL},
         { disk_free,          " %s ",          "/"},
         { disk_free,          " %s  ",        "/home"},*/
-        { wifi_essid,         " %s ",          "wlo1"},
-        { wifi_perc,          "%s%%  ",        "wlo1"},
-        { temp,               "%sºC  ",        "/sys/class/thermal/thermal_zone0/temp" },
-        { battery_state,      "%s",             "BAT1" },
+        { wifi_essid,         " %s  ",        "wlo1"},
+        { cpu_perc,           " %s%%  ",       NULL},
+        { temp,               " %sºC  ",        "/sys/class/thermal/thermal_zone0/temp" },
+        { battery_state,      " %s",             "BAT1" },
         { battery_perc,       "%s%%  ",        "BAT1" },
-	{ datetime,           "%s ",            "%d-%m-%y %H:%M:%S" },
+	{ datetime,           " %s",            "%d-%m-%y %H:%M:%S" },
 };
