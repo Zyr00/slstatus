@@ -68,9 +68,9 @@ static const struct arg args[] = {
 	/* function           format           argument */
         { run_command,        "  %s  ",       "amixer get Master | awk -F'[][]' 'END{ print $2 }'"},
         /*{ ram_used,         " %s/",           NULL},
-        { ram_total,          "%s  ",          NULL},
-        { disk_free,          " %s ",          "/"},
-        { disk_free,          " %s  ",        "/home"},*/
+        { ram_total,          "%s  ",          NULL},*/
+        { run_command,        " %s ",          "df -h / | awk 'NR > 1 { print $4 }'"},
+        { run_command,        " %s  ",        "df -h /home | awk 'NR > 1 { print $4 }'"},
         { wifi_essid,         " %s  ",        "wlo1"},
         { cpu_perc,           " %s%%  ",       NULL},
         { temp,               " %sºC  ",        "/sys/class/thermal/thermal_zone0/temp" },
